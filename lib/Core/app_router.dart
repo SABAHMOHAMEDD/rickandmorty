@@ -5,6 +5,7 @@ import 'package:rick_and_morty/Features/Data/Repository/characters_repository.da
 import 'package:rick_and_morty/Features/Data/Web_services/characters_web_services.dart';
 import 'package:rick_and_morty/Features/Presentation/Screens/characters_screen.dart';
 
+import '../Features/Data/Model/characters_model.dart';
 import '../Features/Presentation/Screens/character_details_screen.dart';
 import 'constants/strings.dart';
 
@@ -22,10 +23,11 @@ class AppRouter {
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
                 create: (BuildContext context) => charactersCubit,
-                child: const CharactersScreen()));
+                child:  const CharactersScreen()));
       case characterDetailsScreen:
+        final character =settings.arguments as Character ;
         return MaterialPageRoute(
-            builder: (_) => const CharacterDetailsScreen());
+            builder: (_) =>  CharacterDetailsScreen(character: character,));
     }
   }
 }

@@ -5,7 +5,7 @@ abstract class CharactersStates {}
 class CharactersInitial extends CharactersStates {}
 
 class CharactersLoaded extends CharactersStates {
-  final List<CharactersModel> characters;
+  final CharactersModel characters;
 
   CharactersLoaded(this.characters);
 }

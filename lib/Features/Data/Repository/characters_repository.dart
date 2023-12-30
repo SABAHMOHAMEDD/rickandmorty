@@ -6,7 +6,10 @@ class CharactersRepository {
   final CharactersWebServices charactersWebServices;
   CharactersRepository(this.charactersWebServices);
 
-  Future<List<CharactersModel>> getAllCharacters() async {
+  Future<CharactersModel> getAllCharacters() async {
     final characters = await charactersWebServices.getAllCharacters();
-    return characters;
-}}
+    CharactersModel characterModel = CharactersModel.fromJson(characters);
+
+    return characterModel;
+  }
+}

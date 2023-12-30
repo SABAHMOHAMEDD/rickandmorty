@@ -18,6 +18,8 @@ dependencies:
   dio: ^5.3.3
   flutter_offline: ^3.0.1
   loading_animation_widget: ^1.2.0+4
+  lottie: ^2.6.0
+
 
 
 dev_dependencies:

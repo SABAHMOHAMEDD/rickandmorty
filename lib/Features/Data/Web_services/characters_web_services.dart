@@ -10,23 +10,15 @@ class CharactersWebServices {
     BaseOptions options = BaseOptions(
         baseUrl: baseUrl,
         receiveDataWhenStatusError: true,
-        connectTimeout: const Duration(seconds: 60),
-        receiveTimeout: const Duration(seconds: 60));
+
+
+
+    );
     dio = Dio(options);
   }
 
-  Future<List<CharactersModel>> getAllCharacters() async {
+  Future<dynamic> getAllCharacters() async {
     Response response = await dio.get('character');
-    if (kDebugMode) {
-      print(response.data.toString());
-    }
-    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     return response.data;
-    try {} catch (error) {
-      if (kDebugMode) {
-        print(error.toString());
-      }
-      return [];
-    }
   }
 }
